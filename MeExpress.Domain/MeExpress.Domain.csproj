@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICliente.cs" />
+    <Compile Include="Interfaces\IPedido.cs" />
+    <Compile Include="Interfaces\IPedidoProdutoItem.cs" />
+    <Compile Include="Interfaces\IProduto.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\PedidoProdutoItem.cs" />
@@ -48,8 +52,6 @@
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
