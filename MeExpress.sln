@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Presentation", "01.Presentation", "{BFA1C777-9FA6-47F7-951B-94B03F8D4EAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Application", "02.Application", "{6ABD81C2-C620-4CBB-B5D2-572562975715}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Domain", "03.Domain", "{DC974D21-4C95-4268-9C08-05AC300F2D59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Infrastructure", "04.Infrastructure", "{5C5A84AE-FC5F-4F99-9951-8CA4F06AC622}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.01.Repository", "04.01.Repository", "{4442B645-40BD-4AC6-ACA8-819D0049AC2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.02.Library", "04.02.Library", "{3EECF58C-760D-484F-BA6A-4D47373E11EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeExpress.Domain", "MeExpress.Domain\MeExpress.Domain.csproj", "{6E0238DF-09BF-4CA6-A238-6F3F8A659BB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E0238DF-09BF-4CA6-A238-6F3F8A659BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E0238DF-09BF-4CA6-A238-6F3F8A659BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E0238DF-09BF-4CA6-A238-6F3F8A659BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E0238DF-09BF-4CA6-A238-6F3F8A659BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4442B645-40BD-4AC6-ACA8-819D0049AC2B} = {5C5A84AE-FC5F-4F99-9951-8CA4F06AC622}
+		{3EECF58C-760D-484F-BA6A-4D47373E11EC} = {5C5A84AE-FC5F-4F99-9951-8CA4F06AC622}
+		{6E0238DF-09BF-4CA6-A238-6F3F8A659BB8} = {DC974D21-4C95-4268-9C08-05AC300F2D59}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B55B8F94-4080-436A-A9D1-98C78E63039C}
+	EndGlobalSection
+EndGlobal
