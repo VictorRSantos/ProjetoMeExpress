@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MeExpress.Domain
 {
-    public interface IPedido
+    public interface IPedidoRepository
     {
         void Incluir(Pedido pedido);
 

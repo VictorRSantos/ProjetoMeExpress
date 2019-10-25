@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace MeExpress.Domain
 {
-    public interface IPedidoProdutoItem
+    public interface IPedidoProdutoItemRepository
     {
 
          List<PedidoProdutoItem> ObterPedidoProdutoItem();
-
 
 
     }

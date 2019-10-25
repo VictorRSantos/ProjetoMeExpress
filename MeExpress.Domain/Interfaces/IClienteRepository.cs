@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MeExpress.Domain
 {
-    public interface ICliente
+    public interface IClienteRepository
     {
 
         Cliente ObterPorCpf(string cpf);
