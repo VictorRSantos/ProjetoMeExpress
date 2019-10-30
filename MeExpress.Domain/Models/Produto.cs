@@ -14,5 +14,6 @@ namespace MeExpress.Domain
 
         public decimal Preco { get; set; }
 
+
     }
 }

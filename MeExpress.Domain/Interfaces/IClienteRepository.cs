@@ -14,7 +14,8 @@ namespace MeExpress.Domain
         void Incluir(Cliente cliente);
 
         void Alterar(Cliente cliente);
-        
+
+        Cliente ObterPorId(string id);
 
     }
 }

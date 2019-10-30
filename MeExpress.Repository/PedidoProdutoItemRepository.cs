@@ -11,8 +11,7 @@ namespace MeExpress.Repository
     {
         public List<PedidoProdutoItem> ObterPedidoProdutoItem()
         {
-            return null;
-
+            throw new NotImplementedException();
         }
     }
 }

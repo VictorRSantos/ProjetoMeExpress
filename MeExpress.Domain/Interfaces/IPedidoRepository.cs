@@ -22,7 +22,7 @@ namespace MeExpress.Domain
 
         List<Pedido> ObterPedidos();
 
-        void AlterarStatusPedido(string PedidoId, PedidoStatus status);
+        void AlterarStatusPedido(string pedidoId, PedidoStatus status);
 
     }
 }
