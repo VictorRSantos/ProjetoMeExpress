@@ -10,7 +10,7 @@ namespace MeExpress.Domain
     {
         //Essa classe vai como um histórico do Pedido
 
-        public int Id { get; set; }
+        public string  Id { get; set; }
 
         public Produto Produto { get; set; }
 

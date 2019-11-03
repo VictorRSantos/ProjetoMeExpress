@@ -10,6 +10,7 @@ namespace MeExpress.Repository
 {
     public class ClienteRepository : IClienteRepository
     {
+
         public void Alterar(Cliente cliente)
         {
             DbHelper.Execute("ClienteAlterar", cliente);

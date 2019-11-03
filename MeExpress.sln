@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedidoUnitTestProject", "Pe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeExpress.ApplicationServices", "MeExpress.ApplicationServices\MeExpress.ApplicationServices.csproj", "{B7D2D384-4D01-444C-96A9-00EF1779F422}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeExpress.UI.Web", "MeExpress.UI.Web\MeExpress.UI.Web.csproj", "{F320C135-F3B6-42AC-82C1-E21B51C3C15B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{B7D2D384-4D01-444C-96A9-00EF1779F422}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7D2D384-4D01-444C-96A9-00EF1779F422}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7D2D384-4D01-444C-96A9-00EF1779F422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F320C135-F3B6-42AC-82C1-E21B51C3C15B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F320C135-F3B6-42AC-82C1-E21B51C3C15B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F320C135-F3B6-42AC-82C1-E21B51C3C15B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F320C135-F3B6-42AC-82C1-E21B51C3C15B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{E0DE9A41-7708-46DD-921F-FAECB9A141F2} = {4442B645-40BD-4AC6-ACA8-819D0049AC2B}
 		{04AE0D97-A924-4EB9-9EA5-2D394C26FB84} = {4442B645-40BD-4AC6-ACA8-819D0049AC2B}
 		{B7D2D384-4D01-444C-96A9-00EF1779F422} = {6ABD81C2-C620-4CBB-B5D2-572562975715}
+		{F320C135-F3B6-42AC-82C1-E21B51C3C15B} = {BFA1C777-9FA6-47F7-951B-94B03F8D4EAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B55B8F94-4080-436A-A9D1-98C78E63039C}

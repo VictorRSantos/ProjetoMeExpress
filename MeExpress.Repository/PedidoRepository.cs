@@ -9,18 +9,57 @@ namespace MeExpress.Repository
 {
     public class PedidoRepository : IPedidoRepository
     {
+
         public void AlterarStatusPedido(string pedidoId, PedidoStatus status)
         {
-            DbHelper.Execute("PedidoAlterarStatus", new { PedidoId = pedidoId, PedidoStatusId = (int)status });
+            DbHelper.Execute("PedidoStatusAlterar", new { PedidoId = pedidoId, PedidoStatusId = (int)status });
+
         }
+
+
+        private List<Pedido> ObterPedidoPorStatus(PedidoStatus status)
+        {
+            var pedidoDataModelList = DbHelper.Query<PedidoDataModel>("PedidoObterPorPedidoStatus", new { PedidoStatusId = (int)status });
+            var lista = new List<Pedido>();
+            foreach (var pedidoDataModel in pedidoDataModelList)
+            {
+                lista.Add(ObterPedidoPorId(pedidoDataModel.Id));
+            }
+            return lista;
+        }
+
+        public Pedido ObterPedidoPorId(string id)
+        {
+            var pedidoDataModel = DbHelper.QueryFirstOrDefault<PedidoDataModel>("PedidoObterPorId", new { Id = id });
+            var pedido = pedidoDataModel.ToPedido();
+
+            var produtoListDataModel = DbHelper.Query<PedidoProdutoItemDataModel>("PedidoProdutoItemObterPorPedidoId", new { PedidoId = id }).Where(m => m.Quantidade > 0).ToList();
+
+            pedido.ProdutoList = new List<PedidoProdutoItem>();
+            foreach (var p in produtoListDataModel)
+            {
+                pedido.ProdutoList.Add(new PedidoProdutoItem()
+                {
+                    Id = p.Id,
+                    Produto = new Produto()
+                    {
+                        Id = p.ProdutoId,
+                        Nome = p.ProdutoNome,
+                        Preco = p.ProdutoPreco
+                    },
+                    Quantidade = p.Quantidade
+                });
+            }
+            return pedido;
+        }
+
 
         public void Incluir(Pedido pedido)
         {
             DbHelper.Execute("PedidoIncluir", new
             {
-
                 Id = pedido.Id,
-                DataSolicitacao = DateTime.Now,
+                DataSolicitado = DateTime.Now,
                 ClienteId = pedido.Cliente.Id,
                 ClienteNome = pedido.Cliente.Nome,
                 ClienteEmail = pedido.Cliente.Email,
@@ -33,10 +72,8 @@ namespace MeExpress.Repository
                 ClienteEstado = pedido.Cliente.Estado,
                 ClienteCPF = pedido.Cliente.CPF,
                 ClienteCEP = pedido.Cliente.CEP,
-                PedidosStatusId = (int)pedido.Status
+                PedidoStatusId = (int)pedido.Status
             });
-
-
             foreach (var item in pedido.ProdutoList)
             {
                 DbHelper.Execute("PedidoProdutoIncluir", new
@@ -47,10 +84,7 @@ namespace MeExpress.Repository
                     ProdutoNome = item.Produto.Nome,
                     ProdutoPreco = item.Produto.Preco,
                     Quantidade = item.Quantidade
-
-
                 });
-
             }
         }
 
@@ -61,27 +95,28 @@ namespace MeExpress.Repository
 
         public List<Pedido> ObterPedidosEmProducao()
         {
-            throw new NotImplementedException();
+            return ObterPedidoPorStatus(PedidoStatus.EmProducao);
+
         }
 
         public List<Pedido> ObterPedidosEmTransporte()
         {
-            throw new NotImplementedException();
+            return ObterPedidoPorStatus(PedidoStatus.EmTransporte);
         }
 
-        public List<Pedido> ObterPedidosEntregue()
+        public List<Pedido> ObterPedidosEntregues()
         {
-            throw new NotImplementedException();
+            return ObterPedidoPorStatus(PedidoStatus.Entregue);
         }
 
         public List<Pedido> ObterPedidosProduzidos()
         {
-            throw new NotImplementedException();
+            return ObterPedidoPorStatus(PedidoStatus.Produzido);
         }
 
         public List<Pedido> ObterPedidosSolicitados()
         {
-            throw new NotImplementedException();
+            return ObterPedidoPorStatus(PedidoStatus.Solicitado);
         }
     }
 }

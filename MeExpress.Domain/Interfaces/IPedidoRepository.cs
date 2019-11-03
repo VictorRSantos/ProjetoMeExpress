@@ -9,20 +9,15 @@ namespace MeExpress.Domain
     public interface IPedidoRepository
     {
         void Incluir(Pedido pedido);
-
         List<Pedido> ObterPedidosSolicitados();
-        
         List<Pedido> ObterPedidosEmProducao();
-
         List<Pedido> ObterPedidosProduzidos();
-
         List<Pedido> ObterPedidosEmTransporte();
-
-        List<Pedido> ObterPedidosEntregue();
-
+        List<Pedido> ObterPedidosEntregues();
         List<Pedido> ObterPedidos();
 
-        void AlterarStatusPedido(string pedidoId, PedidoStatus status);
+        void AlterarStatusPedido(string PedidoId, PedidoStatus status);
+
 
     }
 }

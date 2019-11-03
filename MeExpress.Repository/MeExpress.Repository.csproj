@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="ClienteRepository.cs" />
     <Compile Include="DbHelper.cs" />
+    <Compile Include="PedidoDataModel.cs" />
+    <Compile Include="PedidoProdutoItemDataModel.cs" />
     <Compile Include="PedidoProdutoItemRepository.cs" />
     <Compile Include="PedidoRepository.cs" />
     <Compile Include="ProdutoRepository.cs" />
